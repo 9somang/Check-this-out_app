@@ -18,7 +18,6 @@ class UserRepository {
     RegisterReqDto registerReqDto = RegisterReqDto(username, password, num);
     print(registerReqDto.toJson());
     Response response = await _userProvider.register(registerReqDto.toJson());
-
     dynamic body = response.body;
     print("test: ${body}");
 
