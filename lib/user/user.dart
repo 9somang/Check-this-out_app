@@ -4,7 +4,7 @@ class User{
   final int? id;
   final String? username;
   final String? password;
-  final String? num;
+  final String? student_id;
 
 
   User(
@@ -12,7 +12,7 @@ class User{
       this.id,
       this.username,
       this.password,
-      this.num,
+      this.student_id,
 
       });
 
@@ -21,6 +21,6 @@ class User{
     : id = json['id'],
       username = json['username'],
       password = json['password'],
-      num = json['num'];
+      student_id = json['student_id'];
 
 }
