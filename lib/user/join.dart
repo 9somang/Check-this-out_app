@@ -17,7 +17,7 @@ class JoinPage extends StatelessWidget {
 
   final _username = TextEditingController();
   final _password = TextEditingController();
-  final _num = TextEditingController();
+  final _student_id = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -73,9 +73,9 @@ class JoinPage extends StatelessWidget {
       child: Column(
         children: [
           CustomTextFormField(
-            controller: _num,
+            controller: _student_id,
             hint: "학번",
-            funValidator: validateUsername(),
+            funValidator: validateStudent_id(),
           ),
           CustomTextFormField(
             controller: _password,
@@ -85,14 +85,14 @@ class JoinPage extends StatelessWidget {
           CustomTextFormField(
             controller: _username,
             hint: "이름",
-            funValidator: validateNum(),
+            funValidator: validateUsername(),
           ),
           CustomElevatedButton(
             text: "회원가입",
             funpageRoute: ()async{
               if(_formkey.currentState!.validate()) {
                 await u.register(_username.text.trim(), _password.text.trim(),
-                    _num.text.trim());
+                    _student_id.text.trim());
                 int? result = await register_code;
                 if (result == 1){
                   showToast('회원가입이 완료 되었습니당');

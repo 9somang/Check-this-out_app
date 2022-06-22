@@ -13,7 +13,7 @@ class LoginPage extends StatelessWidget {
   final _formkey = GlobalKey<FormState>();
   final UserController u = Get.put(UserController());
 
-  final _num = TextEditingController();
+  final _student_id = TextEditingController();
   final _password = TextEditingController();
 
 
@@ -66,9 +66,9 @@ class LoginPage extends StatelessWidget {
       child: Column(
         children: [
           CustomTextFormField(
-            controller: _num,
+            controller: _student_id,
             hint: "학번",
-            funValidator: validateUsername(),
+            funValidator: validateStudent_id(),
           ),
           CustomTextFormField(
             controller: _password,
@@ -80,7 +80,7 @@ class LoginPage extends StatelessWidget {
             funpageRoute: () async{
               if (_formkey.currentState!.validate()) {
                 int result =
-                await u.login(_num.text.trim(), _password.text.trim());
+                await u.login(_student_id.text.trim(), _password.text.trim());
                 print(result);
                 if (result == 1) {
                   Get.offAll(Homepage());

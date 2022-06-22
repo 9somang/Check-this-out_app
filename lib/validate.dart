@@ -27,7 +27,7 @@ Function validatePassword() {
   };
 }
 
-Function validateNum() {
+Function validateStudent_id() {
   return (String? value) {
     if (value!.isEmpty) {
       return "학번은 공백이 들어갈 수 없습니다.";

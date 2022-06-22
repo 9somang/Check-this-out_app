@@ -14,10 +14,11 @@ import '../Token/token.dart';
 class UserRepository {
   final UserProvider _userProvider = UserProvider();
 
-  Future<void> register(String username, String password, String num) async {
-    RegisterReqDto registerReqDto = RegisterReqDto(username, password, num);
+  Future<void> register(String username, String password, String student_id) async {
+    RegisterReqDto registerReqDto = RegisterReqDto(student_id, password ,username );
     print(registerReqDto.toJson());
     Response response = await _userProvider.register(registerReqDto.toJson());
+    print(response);
     dynamic body = response.body;
     print("test: ${body}");
 
@@ -29,8 +30,8 @@ class UserRepository {
     print(register_code);
   }
 
-  Future<User> login(String num, String password) async {
-    LoginReqDto loginReqDto = LoginReqDto(num, password);
+  Future<User> login(String student_id, String password) async {
+    LoginReqDto loginReqDto = LoginReqDto(student_id, password);
     print(loginReqDto.toJson());
     Response response = await _userProvider.login(loginReqDto.toJson());
     dynamic headers = response.headers; // headers 함수 = 서버에서 보내는 응답헤더;
