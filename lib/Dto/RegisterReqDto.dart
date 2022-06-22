@@ -1,13 +1,14 @@
 class RegisterReqDto {
-  final String? username;
-  final String? password;
   final String? student_id;
+  final String? password;
+  final String? username;
 
-  RegisterReqDto(this.username, this.password, this.student_id);
+
+  RegisterReqDto(this.student_id, this.password, this.username);
 
   Map<String, dynamic> toJson() => {
-    "username" : username,
-    "password" : password,
     "student_id" : student_id,
+    "password" : password,
+    "username" : username,
   };
 }
