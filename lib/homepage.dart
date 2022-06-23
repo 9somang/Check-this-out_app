@@ -21,7 +21,7 @@ class Homepage extends StatelessWidget {
             children: [
               ElevatedButton(
                 onPressed: (){
-                  Get.to(Checkpage());
+                  Get.to(CheckPage());
                 }
                 ,
                 child: Text('Check this out'),
