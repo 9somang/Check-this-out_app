@@ -1,3 +1,4 @@
+import 'package:check_app/user/user_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'check.dart';
@@ -7,9 +8,10 @@ class Homepage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    UserController u = Get.put(UserController());
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Check this out'),
+        title: Text('환영합니다 ${u.principal.value.username} 님'),
         centerTitle: true,
         backgroundColor: Colors.pink,
         elevation: 0.0,

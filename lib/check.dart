@@ -1,4 +1,6 @@
 import 'package:check_app/Token/token.dart';
+
+import 'package:check_app/user/user_controller.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
@@ -10,9 +12,11 @@ class CheckPage extends StatefulWidget{
 }
 
 
+
 class _CheckpageState extends State<CheckPage>{
   final ImagePicker _picker = ImagePicker();
   dynamic _selectedData = null;
+  UserController u = UserController();
 
   Future<dynamic> patchImage(dynamic input) async {
     print("사진을 서버에 업로드 합니다.");
@@ -20,7 +24,7 @@ class _CheckpageState extends State<CheckPage>{
     try {
       dio.options.contentType = 'multipart/form-data';
       dio.options.maxRedirects.isFinite;
-      dio.options.headers = {'authorization': jwtToken};
+      dio.options.headers = {'authorization': jwtToken, 'student_id': u.principal.value.student_id};
       var response = await dio.post(
         'http://10.0.2.2:5000' + '/image',
         data: input,
