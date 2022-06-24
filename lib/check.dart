@@ -32,7 +32,6 @@ class _CheckpageState extends State<CheckPage>{
     }
   }
 
-  var formData = FormData.fromMap({'image': await MultipartFile.fromFile(sendData)});
 
   @override
   Widget build(BuildContext context) {
@@ -43,19 +42,19 @@ class _CheckpageState extends State<CheckPage>{
           children: <Widget>[
             ElevatedButton(
               onPressed: () async {
-
                 XFile? selectImage = await _picker.pickImage(
-                  //이미지를 선택
-                  source: ImageSource.gallery, //위치는 갤러리
+                  source: ImageSource.gallery,
                   maxHeight: 75,
                   maxWidth: 75,
-                  imageQuality: 30, // 이미지 크기 압축을 위해 퀄리티를 30으로 낮춤.
+                  imageQuality: 30,
                 );
                 if (selectImage != null) {
                   dynamic sendData = selectImage.path;
+                  var formData = FormData.fromMap({'image': await MultipartFile.fromFile(sendData)});
+                  patchImage(formData);
                 }
               },
-              child: Text("Choose a file"),
+              child: Text("이미지 선택하기"),
             ),
             Container(
               decoration: BoxDecoration(
@@ -68,9 +67,9 @@ class _CheckpageState extends State<CheckPage>{
             ),
             ElevatedButton(
               onPressed: (){
-                patchImage(formData);
+
             },
-              child: Text("Upload to server"),
+              child: Text("서버에 업로드하기"),
             ),
           ],
         ),
