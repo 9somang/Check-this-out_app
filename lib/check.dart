@@ -17,15 +17,16 @@ class CheckPage extends StatefulWidget{
 class _CheckpageState extends State<CheckPage>{
   final ImagePicker _picker = ImagePicker();
   dynamic _selectedData = null;
-  UserController u = Get.put(UserController());
+  UserController u = Get.find();
 
   Future<dynamic> patchImage(dynamic input) async {
     print("사진을 서버에 업로드 합니다.");
     var dio = new Dio();
+    print(u.principal.value.password);
     try {
       dio.options.contentType = 'multipart/form-data';
       dio.options.maxRedirects.isFinite;
-      dio.options.headers = {'authorization': jwtToken, 'student_id': {u.principal.value.student_id}};
+      dio.options.headers = {'authorization': jwtToken, 'student_id': '${u.principal.value.student_id}'};
       var response = await dio.post(
         'http://10.0.2.2:5000' + '/image',
         data: input,
