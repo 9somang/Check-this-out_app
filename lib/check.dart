@@ -20,10 +20,9 @@ class _CheckpageState extends State<CheckPage>{
     try {
       dio.options.contentType = 'multipart/form-data';
       dio.options.maxRedirects.isFinite;
-
-      dio.options.headers = {'token': jwtToken};
-      var response = await dio.patch(
-        'http://base uri' + '/users/image',
+      dio.options.headers = {'authorization': jwtToken};
+      var response = await dio.post(
+        'http://10.0.2.2:5000' + '/image',
         data: input,
       );
       print('성공적으로 업로드했습니다');
@@ -45,9 +44,9 @@ class _CheckpageState extends State<CheckPage>{
               onPressed: () async {
                 XFile? selectImage = await _picker.pickImage(
                   source: ImageSource.gallery,
-                  maxHeight: 75,
-                  maxWidth: 75,
-                  imageQuality: 30,
+                  // maxHeight: 75,
+                  // maxWidth: 75,
+                  // imageQuality: 30,
                 );
                 if (selectImage != null) {
                   dynamic sendData = selectImage.path;
