@@ -12,6 +12,7 @@ class CheckPage extends StatefulWidget{
 
 class _CheckpageState extends State<CheckPage>{
   final ImagePicker _picker = ImagePicker();
+  dynamic _selectedData = null;
 
   Future<dynamic> patchImage(dynamic input) async {
     print("사진을 서버에 업로드 합니다.");
@@ -50,8 +51,7 @@ class _CheckpageState extends State<CheckPage>{
                 );
                 if (selectImage != null) {
                   dynamic sendData = selectImage.path;
-                  var formData = FormData.fromMap({'image': await MultipartFile.fromFile(sendData)});
-                  patchImage(formData);
+                  _selectedData = FormData.fromMap({'image': await MultipartFile.fromFile(sendData)});
                 }
               },
               child: Text("이미지 선택하기"),
@@ -66,8 +66,8 @@ class _CheckpageState extends State<CheckPage>{
               height: 400,
             ),
             ElevatedButton(
-              onPressed: (){
-
+              onPressed: () async {
+                await patchImage(_selectedData);
             },
               child: Text("서버에 업로드하기"),
             ),
