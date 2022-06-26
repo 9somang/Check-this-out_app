@@ -20,8 +20,8 @@ class QrcodeRepository{
     print(cmRespDto.data);
 
 
-    QRcheck_code= cmRespDto.code; // 오류 수정함.
-    QRcheck_data = cmRespDto.data;
+    QRcheck_code= await cmRespDto.code; // 오류 수정함.
+    QRcheck_data = await cmRespDto.data;
 
 }
 

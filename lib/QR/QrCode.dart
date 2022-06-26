@@ -11,7 +11,7 @@ class QrcodePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     QrcodeController q = Get.put(QrcodeController());
-    q.findCode();
+    //q.findCode();
 
     return Scaffold(
       body: Center(
@@ -21,7 +21,7 @@ class QrcodePage extends StatelessWidget {
             if(QRcheck_code == 1)...[
                QrImage(data: "${QRcheck_data}", size: 200)
             ]else...[
-              Text('QR코드를 가지고 있지 않습니다.')
+              Text('QR코드를 가지고 있지 않습니다.\n 다시 시도해주세요.')
             ]
 
           ],

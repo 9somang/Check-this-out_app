@@ -16,5 +16,6 @@ class QrcodeController extends GetxController{
 
   void findCode() async{
     await _qrcodeRepository.findCode();
+
   }
 }
