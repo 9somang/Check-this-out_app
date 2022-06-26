@@ -1,10 +1,15 @@
+import 'package:check_app/QR/QrcodeController.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:get/get.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 
 class QrcodePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    QrcodeController q = Get.put(QrcodeController());
+    q.findCode();
+
     return Scaffold(
       body: Center(
         child: Column(

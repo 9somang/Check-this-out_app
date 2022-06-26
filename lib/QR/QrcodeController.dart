@@ -7,11 +7,11 @@ import 'package:get/get.dart';
 class QrcodeController extends GetxController{
   final QrcodeRepository _qrcodeRepository = QrcodeRepository();
 
-  @override
-  void onInit(){
-    super.onInit();
-    findCode();
-  }
+  // @override
+  // void onInit(){
+  //   super.onInit();
+  //   findCode();
+  // }
 
 
   void findCode() async{
