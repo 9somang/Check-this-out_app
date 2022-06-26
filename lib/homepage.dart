@@ -1,4 +1,4 @@
-import 'package:check_app/QrCode.dart';
+import 'package:check_app/QR/QrCode.dart';
 import 'package:check_app/user/Login.dart';
 import 'package:check_app/user/user_controller.dart';
 import 'package:check_app/userinfo.dart';

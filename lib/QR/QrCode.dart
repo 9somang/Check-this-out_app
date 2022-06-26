@@ -13,7 +13,7 @@ class QrcodePage extends StatelessWidget {
             Text(
               '나의 Qr코드'
             ),
-            QrImage(data: '1233213',
+            QrImage(data: '',
             size: 200.0)
           ],
         ),
