@@ -3,6 +3,7 @@ import 'package:check_app/Token/token.dart';
 import 'package:check_app/user/user_controller.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart' hide FormData, MultipartFile;
 import 'package:image_picker/image_picker.dart';
 
@@ -76,18 +77,26 @@ class _CheckpageState extends State<CheckPage>{
             ElevatedButton(
               onPressed: () async {
                 await patchImage(_selectedData);
+                  // IF문 추가하여 정상적으로 qr코드 받았으면 출력
             },
               child: Text("서버에 업로드하기"),
             ),
           ],
         ),
       ),
+
     );
+
   }
 
-
-
-
-
+  void showToast(String message) {
+    Fluttertoast.showToast(
+        msg: message,
+        backgroundColor: Colors.pink,
+        textColor: Colors.white,
+        toastLength: Toast.LENGTH_LONG,
+        gravity: ToastGravity.BOTTOM
+    );
+  }
 
 }

@@ -1,6 +1,6 @@
 
 class CMRespDto{
-  final int? code;
+  late final int? code;
   final String? msg;
   final dynamic data;
 
