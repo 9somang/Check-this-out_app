@@ -77,9 +77,9 @@ class _CheckpageState extends State<CheckPage>{
             ),
             _f != null ? Container(
               width: 300,
-              height: 300,
+              height: 500,
               decoration: BoxDecoration(
-                border: Border.all(width: 1,color: Colors.pink
+                border: Border.all(width: 0.1,color: Colors.black
                 ),
                   image: DecorationImage(
                       image: FileImage(_f!),//File Image를 삽입
