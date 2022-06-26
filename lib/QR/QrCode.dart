@@ -19,7 +19,7 @@ class QrcodePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             if(QRcheck_code == 1)...[
-               QrImage(data: '전송받은 문자열 값', size: 200)
+               QrImage(data: "${QRcheck_data}", size: 200)
             ]else...[
               Text('QR코드를 가지고 있지 않습니다.')
             ]
