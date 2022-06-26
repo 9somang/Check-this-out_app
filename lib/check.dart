@@ -109,8 +109,7 @@ class _CheckpageState extends State<CheckPage>{
                   await patchImage(_selectedData);
                   showToast('사진 업로드 성공');
                 }else {
-                  await patchImage(null);
-                  showToast('사진 업로드 실패');
+                  return showToast('사진 업로드 실패');
                 }
             },
               child: Text("서버에 업로드하기"),
