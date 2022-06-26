@@ -32,6 +32,9 @@ class _CheckpageState extends State<CheckPage>{
         data: input,
       );
       print('성공적으로 업로드했습니다');
+      // if (response.data.code == 1){
+      //   Get.offAll()
+      // }aaa
       return response.data;
     } catch (e) {
       print(e);

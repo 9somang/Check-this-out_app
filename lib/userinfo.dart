@@ -1,0 +1,54 @@
+import 'package:check_app/user/user_controller.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+class UserInfo extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+
+    UserController u = Get.find();
+    return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text('회원 정보 보기'),
+        backgroundColor: Colors.indigo,
+      ),
+      body: Container(
+        child: Center(
+          child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text("회원 번호 : ${u.principal.value.id}",
+                style: TextStyle(
+                  fontSize: 20
+                ),
+                ),
+                Text("학생 이름 : ${u.principal.value.username}",
+                    style: TextStyle(
+                        fontSize: 20
+                ),
+                ),
+                Text("학번 : ${u.principal.value.student_id}",
+                  style: TextStyle(
+                      fontSize: 20
+                ),
+                ),
+                Text("비밀번호 : ${u.principal.value.password}",
+                    style: TextStyle(
+                        fontSize: 20
+                ),
+                ),
+              ]
+                ),
+        ),
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/image/시그니처(세로).jpg'),
+              fit: BoxFit.scaleDown,
+              colorFilter: ColorFilter.mode(
+                  Colors.black.withOpacity(0.2), BlendMode.dstATop)),
+          )
+        ),
+    );
+  }
+}

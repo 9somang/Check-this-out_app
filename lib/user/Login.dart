@@ -83,7 +83,7 @@ class LoginPage extends StatelessWidget {
                 await u.login(_student_id.text.trim(), _password.text.trim());
                 print(result);
                 if (result == 1) {
-                  Get.offAll(Homepage());
+                  Get.offAll(HomePage());
                 }else {showToastlogin('로그인에 실패했습니당');}
               }
             },
