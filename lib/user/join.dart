@@ -26,30 +26,29 @@ class JoinPage extends StatelessWidget {
     return Scaffold(
 
       body:Container(
-        color: Color.fromARGB(224, 229, 162, 236),
         child: Padding(
 
           padding: const EdgeInsets.all(30.0),
           child: ListView(
             children: [
               Container(
-                margin: EdgeInsets.fromLTRB(0,50,0,10),
+                margin: EdgeInsets.fromLTRB(0,50,0,20),
+                width: 100,
+                height: 100,
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage('assets/image/정상수 손가락질.jpg'),
-
+                      image: AssetImage('assets/image/심벌마크입체배경제거.png'),
                       fit: BoxFit.contain,
-                      colorFilter: ColorFilter.mode(
-                          Colors.black.withOpacity(0.9), BlendMode.dstATop)
                   ),
                 ),
-                child: Container(
+              ),
+                Container(
                   alignment: Alignment.center,
                   margin: EdgeInsets.all(0),
-                  padding: EdgeInsets.fromLTRB(0, 125, 0,0),
-                  height: 170,
+                  padding: EdgeInsets.fromLTRB(0, 5, 0,0),
+                  height: 40,
                   child: Text(
-                    "Check this 회원가입",
+                    "회원가입",
                     style: TextStyle(
                         color: Colors.black,
                         fontSize:30,
@@ -57,8 +56,6 @@ class JoinPage extends StatelessWidget {
                     ),
                   ),
                 ),
-
-              ),
               _JoinForm()
             ],
           ),
@@ -95,10 +92,10 @@ class JoinPage extends StatelessWidget {
                     _student_id.text.trim());
                 int? result = await register_code;
                 if (result == 1){
-                  showToast('회원가입이 완료 되었습니당');
+                  showToast('회원가입이 완료 되었습니다');
                   Get.to(()=> LoginPage());
                 } else {
-                  showToast('회원가입 실패했습니당');
+                  showToast('회원가입에 실패하였습니다');
                 }
               }
             },
@@ -107,10 +104,10 @@ class JoinPage extends StatelessWidget {
             Get.offAll(LoginPage());
           },
               child: Text(
-                  "로그인페이지로~"
+                  "로그인페이지로"
               ),
             style: TextButton.styleFrom(
-                  primary: Colors.redAccent
+                  primary: Colors.indigo
             ),
           ),
         ],
@@ -120,7 +117,7 @@ class JoinPage extends StatelessWidget {
   void showToast(String message) {
     Fluttertoast.showToast(
         msg: message,
-        backgroundColor: Colors.indigo,
+        backgroundColor: Colors.black,
         textColor: Colors.white,
         toastLength: Toast.LENGTH_LONG,
         gravity: ToastGravity.BOTTOM

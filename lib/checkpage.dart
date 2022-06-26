@@ -20,18 +20,11 @@ class CheckHomepage extends StatelessWidget{
                 ,
                 child: Text('Check this out'),
                 style: ElevatedButton.styleFrom(
-                    primary: Colors.pinkAccent.withOpacity(0.8)
+                    primary: Colors.black
                 ),
               ),
             ],
           ),
-        ),
-        decoration: BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage('assets/image/checkthisout.jpg'),
-              fit: BoxFit.cover,
-              colorFilter: ColorFilter.mode(
-                  Colors.black.withOpacity(1), BlendMode.dstATop)),
         ),
       ),
     );

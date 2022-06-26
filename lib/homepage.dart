@@ -39,7 +39,7 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: Text('환영합니다 ${u.principal.value.username} 님'),
         centerTitle: true,
-        backgroundColor: Colors.pink,
+        backgroundColor: Colors.black,
         elevation: 0.0,
       ),
       drawer: Drawer(
@@ -48,13 +48,13 @@ class _HomePageState extends State<HomePage> {
           children: <Widget>[
             UserAccountsDrawerHeader(
               currentAccountPicture: CircleAvatar(
-                backgroundImage: AssetImage('assets/image/정상수 애기.jpg'),
+                backgroundImage: AssetImage('assets/image/심벌마크입체배경제거.png'),
                 backgroundColor: Colors.white,
               ),
               accountName: Text('${u.principal.value.username}'), // 학생 이름 불러오기
               accountEmail: Text('${u.principal.value.student_id}'), // 학번 불러오기
               decoration: BoxDecoration(
-                  color: Colors.pink,
+                  color: Colors.black,
                   borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(30.0),
                       bottomRight: Radius.circular(30.0)
@@ -63,7 +63,7 @@ class _HomePageState extends State<HomePage> {
 
             ),
             ListTile(
-              leading: Icon(Icons.exit_to_app, color: Colors.pinkAccent[100]),
+              leading: Icon(Icons.exit_to_app, color: Colors.black),
               title: Text('로그아웃'),
               onTap: () {
                 _logoutDialog(context);
@@ -72,7 +72,7 @@ class _HomePageState extends State<HomePage> {
             ),
             Divider(),
             ListTile(
-              leading: Icon(Icons.person, color: Colors.pinkAccent[100]),
+              leading: Icon(Icons.person, color: Colors.black),
               title: Text('나의 계정정보 보기'),
               onTap: () {
                 Navigator.pop(context);

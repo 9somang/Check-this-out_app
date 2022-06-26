@@ -21,32 +21,33 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        color: Color.fromARGB(224, 229, 162, 236),
         child: Padding(
           padding: const EdgeInsets.all(30),
           child: ListView(
             children: [
               Container(
-                height: 150,
+                margin: EdgeInsets.fromLTRB(0,50,0,20),
                 width: 100,
-                margin: EdgeInsets.all(1),
-                padding: EdgeInsets.fromLTRB(0, 15, 100,100),
+                height: 100,
                 decoration: BoxDecoration(
-
                   image: DecorationImage(
-                      image: AssetImage('assets/image/정상수 까꿍.jpg'),
-                      fit: BoxFit.contain
+                    image: AssetImage('assets/image/심벌마크입체배경제거.png'),
+                    fit: BoxFit.contain,
                   ),
                 ),
               ),
               Container(
                 alignment: Alignment.center,
-                width: 170,
-                height: 100,
+                margin: EdgeInsets.all(0),
+                padding: EdgeInsets.fromLTRB(0, 5, 0,0),
+                height: 40,
                 child: Text(
-                  "Check this 로그인",
-                  style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-
+                  "로그인",
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize:30,
+                      fontWeight: FontWeight.bold
+                  ),
                 ),
               ),
               _loginForm()
@@ -84,7 +85,7 @@ class LoginPage extends StatelessWidget {
                 print(result);
                 if (result == 1) {
                   Get.offAll(HomePage());
-                }else {showToastlogin('로그인에 실패했습니당');}
+                }else {showToastlogin('로그인 실패');}
               }
             },
           ),
@@ -93,12 +94,12 @@ class LoginPage extends StatelessWidget {
               Get.to(JoinPage());
             },
             child: Text(
-              "회원가입이 안되어 있다면 Click this",
+              "회원가입이 안되어 있다면 ?",
               textAlign: TextAlign.center,
             ),
             style: TextButton.styleFrom(
-                primary: Colors.redAccent
-            ),
+                primary: Colors.indigo
+          ),
           ),
         ],
       ),

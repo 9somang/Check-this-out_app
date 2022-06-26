@@ -11,7 +11,7 @@ class UserInfo extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         title: Text('회원 정보 보기'),
-        backgroundColor: Colors.indigo,
+        backgroundColor: Colors.black,
       ),
       body: Container(
         child: Center(

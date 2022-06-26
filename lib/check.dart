@@ -54,7 +54,12 @@ class _CheckpageState extends State<CheckPage>{
   Widget build(BuildContext context) {
 
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: Colors.black,
+        title: Text('자가진단 Check this'),
+        centerTitle: true,
+        elevation: 0.0,
+      ),
       body: Center(
         child: Column(
           children: <Widget>[
@@ -77,6 +82,9 @@ class _CheckpageState extends State<CheckPage>{
                 }
               },
               child: Text("이미지 선택하기"),
+              style: ElevatedButton.styleFrom(
+                primary: Colors.black
+              ),
             ),
             _f != null ? Container(
               width: 300,
@@ -96,13 +104,15 @@ class _CheckpageState extends State<CheckPage>{
 
               ),
               child: Text(
-                  '사진을 선택해주세용가리',
+                  '사진을 선택해주십시오',
                   style: TextStyle(
                     height: 18,
                   fontSize: 18.0,
                   ),
                   textAlign: TextAlign.center,
+
               ),
+
             ),
 
             ElevatedButton(
@@ -120,6 +130,9 @@ class _CheckpageState extends State<CheckPage>{
                 }
             },
               child: Text("서버에 업로드하기"),
+              style: ElevatedButton.styleFrom(
+                  primary: Colors.black
+              ),
             ),
           ],
         ),
