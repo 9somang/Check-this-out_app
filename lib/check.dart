@@ -126,7 +126,7 @@ class _CheckpageState extends State<CheckPage>{
                     showToast('사진 업로드 실패\n 다시 선택해 주세요');
                   }
                 }else {
-                  return showToast('사진 업로드 실패');
+                  return showToast('사진을 선택해 주세요');
                 }
             },
               child: Text("서버에 업로드하기"),
