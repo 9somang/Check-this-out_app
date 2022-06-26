@@ -108,9 +108,13 @@ class _CheckpageState extends State<CheckPage>{
             ElevatedButton(
               onPressed: () async {
                 if(_f != null){
-                  await patchImage(_selectedData);
-                  showToast('사진 업로드 성공');
-                  Get.offAll(HomePage);
+                  dynamic res = await patchImage(_selectedData);
+                  if(res['code'] == 1) {
+                    showToast('사진 업로드 성공');
+                    Get.to(HomePage());
+                  } else {
+                    showToast('사진 업로드 실패');
+                  }
                 }else {
                   return showToast('사진 업로드 실패');
                 }
