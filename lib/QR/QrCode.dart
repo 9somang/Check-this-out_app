@@ -1,4 +1,7 @@
+import 'package:check_app/Dto/CMRespDto.dart';
 import 'package:check_app/QR/QrcodeController.dart';
+import 'package:check_app/Token/QRcheck_code.dart';
+import 'package:check_app/homepage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:get/get.dart';
@@ -14,12 +17,13 @@ class QrcodePage extends StatelessWidget {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              '나의 Qr코드'
-            ),
-            QrImage(data: '',
-            size: 200.0)
+          children: [
+            if(QRcheck_code == 1)...[
+              QrImage(data: '전송받은 문자열 값', size: 200)
+            ]else...[
+              Text('QR코드를 가지고 있지 않습니다.')
+            ]
+
           ],
         ),
       ),
