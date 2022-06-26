@@ -13,14 +13,14 @@ class QrcodeRepository{
 
   Future<void> findCode() async {
     Response response = await _qrCodeProvider.findcode();
-    dynamic body = await response.body;
+    dynamic body = response.body;
     final CMRespDto cmRespDto = CMRespDto.fromJson(body);
     print(cmRespDto.code);
     print(cmRespDto.msg);
     print(cmRespDto.data);
 
 
-    QRcheck_code= await cmRespDto.code; // 오류 수정함.
+    QRcheck_code = cmRespDto.code; // 오류 수정함.
 
 
 }

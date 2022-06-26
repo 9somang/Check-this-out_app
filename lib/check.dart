@@ -1,5 +1,6 @@
-import 'package:check_app/Token/token.dart';
+import 'dart:io';
 
+import 'package:check_app/Token/token.dart';
 import 'package:check_app/user/user_controller.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +19,10 @@ class CheckPage extends StatefulWidget{
 class _CheckpageState extends State<CheckPage>{
   final ImagePicker _picker = ImagePicker();
   dynamic _selectedData = null;
+  File? _f = null;
+  dynamic _selectedimg = null;
   UserController u = Get.find();
+
 
   Future<dynamic> patchImage(dynamic input) async {
     print("사진을 서버에 업로드 합니다.");
@@ -42,9 +46,11 @@ class _CheckpageState extends State<CheckPage>{
     }
   }
 
-
   @override
   Widget build(BuildContext context) {
+
+
+
     return Scaffold(
       appBar: AppBar(),
       body: Center(
@@ -58,21 +64,25 @@ class _CheckpageState extends State<CheckPage>{
                   // maxWidth: 75,
                   // imageQuality: 30,
                 );
+
+                _f = selectImage as File;
                 if (selectImage != null) {
                   dynamic sendData = selectImage.path;
                   _selectedData = FormData.fromMap({'image': await MultipartFile.fromFile(sendData)});
+                  _selectedimg = selectImage;
+                  File f = _selectedimg;
                 }
               },
               child: Text("이미지 선택하기"),
             ),
             Container(
+              width: 100,
+              height: 100,
               decoration: BoxDecoration(
-                border: Border.all(
-                  width: 1,
-                ),
+                  image: DecorationImage(
+                      image: FileImage(_f!),//File Image를 삽입
+                      fit: BoxFit.cover)
               ),
-              width: 350,
-              height: 400,
             ),
             ElevatedButton(
               onPressed: () async {
