@@ -21,6 +21,8 @@ class _CheckpageState extends State<CheckPage>{
   dynamic _selectedData = null;
   File? _f = null;
   UserController u = Get.find();
+  XFile? selectedImage = null;
+
 
 
   Future<dynamic> patchImage(dynamic input) async {
@@ -48,8 +50,6 @@ class _CheckpageState extends State<CheckPage>{
   @override
   Widget build(BuildContext context) {
 
-
-
     return Scaffold(
       appBar: AppBar(),
       body: Center(
@@ -64,23 +64,29 @@ class _CheckpageState extends State<CheckPage>{
                   // imageQuality: 30,
                 );
 
-                _f = selectImage as File;
+
                 if (selectImage != null) {
                   dynamic sendData = selectImage.path;
                   _selectedData = FormData.fromMap({'image': await MultipartFile.fromFile(sendData)});
+                  setState(() {
+                    _f = File(selectImage.path);
+                  });
                 }
               },
               child: Text("이미지 선택하기"),
             ),
-            Container(
-              width: 100,
-              height: 100,
+            _f != null ? Container(
+              width: 300,
+              height: 300,
               decoration: BoxDecoration(
+                border: Border.all(width: 1,color: Colors.pink
+                ),
                   image: DecorationImage(
                       image: FileImage(_f!),//File Image를 삽입
                       fit: BoxFit.cover)
               ),
-            ),
+            ) : SizedBox(height: 200),
+
             ElevatedButton(
               onPressed: () async {
                 await patchImage(_selectedData);
