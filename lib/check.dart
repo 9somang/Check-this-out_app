@@ -20,7 +20,6 @@ class _CheckpageState extends State<CheckPage>{
   final ImagePicker _picker = ImagePicker();
   dynamic _selectedData = null;
   File? _f = null;
-  dynamic _selectedimg = null;
   UserController u = Get.find();
 
 
@@ -69,8 +68,6 @@ class _CheckpageState extends State<CheckPage>{
                 if (selectImage != null) {
                   dynamic sendData = selectImage.path;
                   _selectedData = FormData.fromMap({'image': await MultipartFile.fromFile(sendData)});
-                  _selectedimg = selectImage;
-                  File f = _selectedimg;
                 }
               },
               child: Text("이미지 선택하기"),
