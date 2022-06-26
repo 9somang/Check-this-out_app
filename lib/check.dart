@@ -85,7 +85,22 @@ class _CheckpageState extends State<CheckPage>{
                       image: FileImage(_f!),//File Image를 삽입
                       fit: BoxFit.cover)
               ),
-            ) : SizedBox(height: 200),
+            ) : Container(
+              width: 300,
+              height: 500,
+              decoration: BoxDecoration(
+                border: Border.all(width: 1,color: Colors.black),
+
+              ),
+              child: Text(
+                  '사진을 선택해주세용가리',
+                  style: TextStyle(
+                    height: 18,
+                  fontSize: 18.0,
+                  ),
+                  textAlign: TextAlign.center,
+              ),
+            ),
 
             ElevatedButton(
               onPressed: () async {
