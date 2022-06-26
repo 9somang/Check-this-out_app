@@ -23,7 +23,7 @@ class CustomTextFormField extends StatelessWidget {
           cursorColor: Colors.white,
           controller: controller,
           validator:  funValidator,
-          obscureText: hint=="Password" ? true : false,
+          obscureText: hint=="비밀번호" ? true : false,
           decoration: InputDecoration(
             labelText: '$hint',
             hintText: "Enter $hint",

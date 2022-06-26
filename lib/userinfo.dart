@@ -5,12 +5,11 @@ import 'package:get/get.dart';
 class UserInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-
     UserController u = Get.find();
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text('회원 정보 보기'),
+        title: Text('나의 계정 정보 보기'),
         backgroundColor: Colors.black,
       ),
       body: Container(
@@ -31,11 +30,6 @@ class UserInfo extends StatelessWidget {
                 Text("학번 : ${u.principal.value.student_id}",
                   style: TextStyle(
                       fontSize: 20
-                ),
-                ),
-                Text("비밀번호 : ${u.principal.value.password}",
-                    style: TextStyle(
-                        fontSize: 20
                 ),
                 ),
               ]

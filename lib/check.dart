@@ -123,7 +123,7 @@ class _CheckpageState extends State<CheckPage>{
                     showToast('사진 업로드 성공');
                     Get.to(HomePage());
                   } else {
-                    showToast('사진 업로드 실패');
+                    showToast('사진 업로드 실패\n 다시 선택해 주세요');
                   }
                 }else {
                   return showToast('사진 업로드 실패');
@@ -145,8 +145,8 @@ class _CheckpageState extends State<CheckPage>{
   void showToast(String message) {
     Fluttertoast.showToast(
         msg: message,
-        backgroundColor: Colors.white,
-        textColor: Colors.black,
+        backgroundColor: Colors.indigoAccent,
+        textColor: Colors.white,
         toastLength: Toast.LENGTH_LONG,
         gravity: ToastGravity.BOTTOM
     );
