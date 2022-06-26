@@ -7,8 +7,8 @@ import 'package:get/get_connect/http/src/response/response.dart';
 class QrcodeRepository{
   final QrCodeProvider _qrCodeProvider = QrCodeProvider();
 
-  Future<void> findCode(student_id) async {
-    Response response = await _qrCodeProvider.findcode(student_id);
+  Future<void> findCode() async {
+    Response response = await _qrCodeProvider.findcode();
     dynamic body = await response.body;
     print(body);
 
