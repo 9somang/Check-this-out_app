@@ -6,6 +6,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart' hide FormData, MultipartFile;
+import 'package:http/http.dart'hide MultipartFile;
 import 'package:image_picker/image_picker.dart';
 
 
@@ -104,9 +105,13 @@ class _CheckpageState extends State<CheckPage>{
 
             ElevatedButton(
               onPressed: () async {
-                await patchImage(_selectedData);
-                _f != null ? showToast('사진 업로드 성공') :
-                    showToast('사진 업로드 실패');
+                if(_f != null){
+                  await patchImage(_selectedData);
+                  showToast('사진 업로드 성공');
+                }else {
+                  await patchImage(null);
+                  showToast('사진 업로드 실패');
+                }
             },
               child: Text("서버에 업로드하기"),
             ),
