@@ -11,7 +11,7 @@ class QrcodePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     QrcodeController q = Get.put(QrcodeController());
-    //q.findCode();
+    q.findCode();
 
     return Scaffold(
       body: Center(
