@@ -1,6 +1,8 @@
 import 'dart:io';
 
 import 'package:check_app/Token/token.dart';
+import 'package:check_app/homepage.dart';
+import 'package:check_app/main.dart';
 import 'package:check_app/user/user_controller.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
@@ -108,6 +110,7 @@ class _CheckpageState extends State<CheckPage>{
                 if(_f != null){
                   await patchImage(_selectedData);
                   showToast('사진 업로드 성공');
+                  Get.offAll(HomePage);
                 }else {
                   return showToast('사진 업로드 실패');
                 }
