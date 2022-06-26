@@ -145,8 +145,8 @@ class _CheckpageState extends State<CheckPage>{
   void showToast(String message) {
     Fluttertoast.showToast(
         msg: message,
-        backgroundColor: Colors.black,
-        textColor: Colors.white,
+        backgroundColor: Colors.white,
+        textColor: Colors.black,
         toastLength: Toast.LENGTH_LONG,
         gravity: ToastGravity.BOTTOM
     );
