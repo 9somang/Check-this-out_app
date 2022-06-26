@@ -1,7 +1,7 @@
 
 
 
-import 'dart:html';
+// import 'dart:html';
 
 import 'package:check_app/Dto/CMRespDto.dart';
 import 'package:check_app/QR/Qrcode_provider.dart';
@@ -19,7 +19,7 @@ class QrcodeRepository{
     print(cmRespDto.msg);
     print(cmRespDto.data);
 
-    QRcheck_code == cmRespDto.code;
+    QRcheck_code = cmRespDto.code; // 오류 수정함.
 
 
 }
