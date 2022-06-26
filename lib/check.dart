@@ -105,7 +105,8 @@ class _CheckpageState extends State<CheckPage>{
             ElevatedButton(
               onPressed: () async {
                 await patchImage(_selectedData);
-                  // IF문 추가하여 정상적으로 qr코드 받았으면 출력
+                _f != null ? showToast('사진 업로드 성공') :
+                    showToast('사진 업로드 실패');
             },
               child: Text("서버에 업로드하기"),
             ),
