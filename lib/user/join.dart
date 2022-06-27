@@ -93,7 +93,7 @@ class JoinPage extends StatelessWidget {
                 int? result = await register_code;
                 if (result == 1){
                   showToast('회원가입이 완료 되었습니다');
-                  Get.to(()=> LoginPage());
+                  Get.offAll(()=> LoginPage());
                 } else {
                   showToast('회원가입에 실패하였습니다');
                 }
