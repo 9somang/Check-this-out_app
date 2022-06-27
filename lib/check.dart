@@ -37,7 +37,7 @@ class _CheckpageState extends State<CheckPage>{
       dio.options.maxRedirects.isFinite;
       dio.options.headers = {'authorization': jwtToken, 'student_id': '${u.principal.value.student_id}'};
       var response = await dio.post(
-        'http://10.0.2.2:5000' + '/image',
+        'http://43.200.123.69:5000' + '/image',
         data: input,
       );
       print('성공적으로 업로드했습니다');

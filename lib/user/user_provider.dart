@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-const host = "http://10.0.2.2:5000/auth";
+const host = "http://43.200.123.69:5000/auth";
 // 통신
 class UserProvider extends GetConnect {
 

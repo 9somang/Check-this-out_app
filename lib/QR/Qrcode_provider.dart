@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import '../Token/token.dart';
 UserController u = Get.find();
 
-const host = "http://10.0.2.2:5000/image";
+const host = "http://43.200.123.69:5000/image";
 
 class QrCodeProvider extends GetConnect {
 
